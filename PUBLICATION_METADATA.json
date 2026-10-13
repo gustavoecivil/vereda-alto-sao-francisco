@@ -1,13 +1,16 @@
 ﻿{
-    "parameters":  63,
-    "built_on":  "2026-10-13",
-    "precaution":  "no legally validated conformance conclusions",
-    "stations":  10,
-    "project":  "Vereda SF1",
-    "data_end":  "2021-11-23",
-    "server_runtime":  "none",
-    "observations":  25247,
-    "legal_release":  "NOT_RELEASED",
-    "sqlserver_access":  "none",
-    "publish_type":  "STATIC_RESEARCH_PROTOTYPE"
+    "release":  "claude_dashboard_export_2026-10-13",
+    "iqa_numericos":  30,
+    "fonte":  "IDE-Sisema/ANA/IGAM",
+    "banco_sql_em_rede":  false,
+    "parametros":  63,
+    "estacoes":  10,
+    "instantaneo_estatico":  true,
+    "licencia_hidrografia":  "CC BY 4.0",
+    "iqa_total":  250,
+    "observacoes":  25247,
+    "trechos_hidrograficos":  605,
+    "dataset_individual":  "1997-09-22/2021-11-23",
+    "projeto":  "VEREDA SF1",
+    "legal_release":  "NOT_RELEASED"
 }

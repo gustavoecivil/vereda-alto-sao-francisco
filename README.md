@@ -1,41 +1,42 @@
-﻿# Vereda — Inteligência Ambiental | Alto São Francisco SF1
+﻿# VEREDA — Inteligência Ambiental | Alto São Francisco SF1
 
-Prévia interativa de investigação da qualidade das águas superficiais do Alto São Francisco, Minas Gerais. Esta página pública apresenta o **Panorama Científico** com dez estações IGAM, contorno territorial, hidrografia principal e séries históricas, como demonstração em desenvolvimento.
+Dashboard interativo e científico do Alto São Francisco em Minas Gerais. Versão sincronizada com o artefato mais recente produzido no Claude Desktop e exportada em 13/10/2026.
 
-## Acessar a página
+## Página pública
 
-Após habilitar GitHub Pages: https://gustavoecivil.github.io/vereda-alto-sao-francisco/
+https://gustavoecivil.github.io/vereda-alto-sao-francisco/
 
-## Fontes e cobertura
+## Funcionalidades
 
-- 10 estações oficiais no recorte Alto São Francisco — SF1.
-- 25.247 observações individuais de parâmetros, registradas entre 22/09/1997 e 23/11/2021.
-- 63 parâmetros catalogados. As unidades originais por medição ainda requerem comprovação documental.
-- IQA anual (2000–2024): 250 registros estação-ano, dos quais 30 contêm valor numérico, e os demais classificação/indicação de ausência.
-- 605 feições simplificadas de drenagem principal obtidas da IDE-Sisema/ANA (BHO 2018), ordem Strahler >= 7. É um **subconjunto do recorte retangular**, visualmente limitado ao polígono SF1; não é hidrografia completa.
-- Coordenadas das estações da base SQL Server VSI_SF1, exportadas em modo somente leitura.
-- Links Google Maps Satellite/Street View abrem plataformas externas por coordenada: não são fotos autenticadas de campanha nem mapas incorporados.
+- Três direções visuais: A — Carta; B — Observatório; C — Laboratório.
+- Mapa interativo com dez estações IGAM, limite oficial SF1 e seleção visual de 605 trechos principais da Base Hidrográfica Ottocodificada.
+- Ficha de estação com coordenadas cadastrais, município, dominialidade e links externos Google Maps Satélite/Street View.
+- Medições por parâmetro: 25.247 observações individuais de setembro/1997 a novembro/2021, 63 parâmetros, valores censurados abaixo de L ou acima de U destacados separadamente, sem imputação.
+- IQA anual de 2000–2024: 250 registros estação-ano, com apenas 30 valores numéricos. Classificações textuais e ausência de coleta não são convertidas em números.
+- Matriz de disponibilidade, alertas de fonte e caderno de evidências em memória da aba, ainda sem persistência/exportação.
 
-## Sobre os dados
+## Restrições científicas
 
-Este é um **snapshot estático, publicado a partir de uma exportação local validada**, e **não há conexão ao SQL Server pelo navegador**. Para atualizar observações, regras ou estações, publicar uma nova versão validada. Os dados presentes neste site não devem ser interpretados como atualizados em tempo real.
+Conformidade jurídica: NOT_RELEASED. Ainda não existe validação temporal e por trecho da classe legal, de unidades originais por observação, condicionantes normativas e regra estatística que permita caracterizar infrações. A versão pública mantém os quatro estados normativos neutros. Um resultado censurado acima do limite analítico não significa infração legal.
 
-## Limites científicos
+O navegador não acessa o SQL Server: todos os arquivos neste site formam um snapshot estático de exportações somente leitura. A base individual termina em 2021, e o IQA possui registros até 2024. Ausência de resultados recentes na base não comprova encerramento do monitoramento. Não utilizar como laudo, certificado de potabilidade ou parecer de conformidade.
 
-**Conformidade legal: NOT_RELEASED.** As classes cadastradas não comprovam a classe juridicamente vigente do trecho e da coleta. Unidades originais de amostras e aplicação das regras de censura e estatística requerem validação adicional. O site não publica conclusões de infração/conformidade nem marca campanhas em vermelho como violações legais. Resultados <L e >U representam intervalos, não valores exatos.
+## Dados, fontes e licenças
 
-Não utilizar este protótipo como laudo ambiental, medição oficial, parecer jurídico ou certificado de potabilidade.
+- IGAM — Projeto Águas de Minas: https://igam.mg.gov.br/
+- ANA — Portal da Qualidade da Água: https://qualidadedaagua.ana.gov.br/
+- IDE-Sisema/IGAM e ANA — Base Hidrográfica Ottocodificada do rio São Francisco, camada ide_0101_sf_hidro_otto_lin:
+https://idesisema.meioambiente.mg.gov.br/geonetwork/srv/api/records/c884d6f9-82b4-4e7b-8bff-736079bffc24
+- Licença da camada geográfica conforme metadados: Creative Commons Atribuição 4.0 Internacional (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/deed.pt-br
+- Transformações derivadas: seleção dos 605 trechos principais com Strahler >= 7 no recorte retangular SF1 e simplificação geométrica cartográfica para reduzir o tamanho do arquivo. Esta camada não é a rede hidrográfica completa.
+- Google Maps abre por links externos centrados nas coordenadas cadastradas; não redistribuímos imagens nem afirmamos que representam o ponto físico exato da coleta.
 
-## Projeto e referências
+Vereda é um projeto independente: citar IGAM, ANA, órgãos públicos e dados de origem não implica patrocínio, parceria ou endosso institucional.
 
-- [IGAM — Monitoramento e informações](https://igam.mg.gov.br/)
-- [ANA — Portal da Qualidade da Água](https://qualidadedaagua.ana.gov.br/)
-- [IDE-Sisema — Geoportal](https://geoportal.meioambiente.mg.gov.br/home)
+## Implantação
 
-**Vereda é uma iniciativa independente de inteligência ambiental.** Os órgãos citados são fontes das informações; a menção não implica parceria, patrocínio ou aprovação institucional.
+GitHub Pages publica os arquivos de interface (index.html), o adaptador de dados (js/dash-shim.js), as bibliotecas locais (vendor/), a identidade Vereda (assets/) e os arquivos de dados estáticos (data/).
 
-## Estado de implementação
+Código científico interno, SQL Server, segredos, arquivos de auditoria do Claude e relatórios operacionais não são enviados para este repositório.
 
-O Panorama Científico permite selecionar estações e parâmetros, explorar séries com os resultados originais, localizar pontos e abrir vistas externas por satélite/Street View. Os demais módulos, a conectividade dinâmica com o SQL Server, persistência do caderno de evidências, fotografias de campo autenticadas, avaliação de conformidade e novos dados após 2021 permanecem em desenvolvimento.
-
-O código-fonte científico, os relatórios internos e as credenciais do projeto não fazem parte desta publicação.
+Próximos passos: validação legal robusta, observações de 2022 em diante, fotografias autenticadas das estações e caderno de evidências persistente.
