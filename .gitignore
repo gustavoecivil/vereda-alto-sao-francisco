@@ -1,0 +1,14 @@
+﻿*.env
+*.db
+*.duckdb
+*.sqlite
+*.bak
+*.key
+*.pem
+*.pfx
+*.csv
+*.xlsx
+*.zip
+*.mcpb
+__pycache__/
+.DS_Store
